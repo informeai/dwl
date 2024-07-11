@@ -1,6 +1,7 @@
 package pkg
 
 import (
+	"fmt"
 	"io"
 	"net/http"
 	"os"
@@ -32,7 +33,13 @@ func (d *Download) Start(url, outFile string) error {
 	if err := d.prepareProgressBar(response, file); err != nil {
 		return err
 	}
+	d.finished()
 	return nil
+}
+
+// finished print concluded download
+func (d *Download) finished() {
+	fmt.Println("Download Concluded")
 }
 
 // fetch execute request with url

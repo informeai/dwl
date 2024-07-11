@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 
 	"github.com/informeai/dwl/pkg"
@@ -16,5 +15,4 @@ func main() {
 	if err := term.Run(); err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println("Download Completed")
 }
